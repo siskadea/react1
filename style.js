@@ -31,6 +31,7 @@ const style=StyleSheet.create({
     },
     tulisanku2:{
         padding:5,
+        paddingBottom:2,
         fontSize:12,
         fontFamily: 'lucida grande',
         color:'black'

@@ -11,7 +11,9 @@ import home  from './foto/home.png';
 import search  from './foto/search.png';
 import vidio  from './foto/vidio.png';
 import toko  from './foto/toko.png';
-import suga2  from './foto/suga2.jpg';
+import save  from './foto/save.png';
+import komen  from './foto/komen.png';
+import send  from './foto/send.png';
 import { style } from "./style";
 
 const App = () => {
@@ -60,9 +62,14 @@ const IsiBeranda = () => {
   return(
     <View>
       <Text style={style.tulisanku2}>
-        <Image source={story2} style={{width:40, height:40}}/>  asriputridga 
+        <Image source={story3} style={{width:30, height:30}}/>  siskadea_ 
       </Text>
-             <Image source={suga} style={{width:400, height:420}}/>
+            <Image source={suga} style={{width:400, height:340}}/>  
+      <Text style={{marginLeft:8}}>
+            <Image source={love} style={{width:20, height:20}}/>   <Image source={komen} style={{width:20, height:20}}/>   <Image source={send} style={{width:25, height:25}}/>                                                                        <Image source={save} style={{width:20, height:20}}/>
+      </Text>
+      <Text style={style.tulisanku2}>4.500.000 suka</Text>
+      <Text style={style.tulisanku2}>AGUST D in the stage</Text>
     </View>
   )
 }
@@ -70,8 +77,8 @@ const Footer = () => {
   return(
     <View>
       <Text style={style.tulisanku2}>
-           <Image source={home} style={{width:30, height:30}}/>              <Image source={search} style={{width:35, height:35}}/>               <Image source={vidio} style={{width:35, height:35}}/>                 <Image source={toko} style={{width:30, height:35}}/>                 <Image source={story1} style={{width:30, height:30}}/>
-      </Text>
+           <Image source={home} style={{width:25, height:25}}/>               <Image source={search} style={{width:30, height:30}}/>                 <Image source={vidio} style={{width:30, height:30}}/>                    <Image source={toko} style={{width:25, height:30}}/>                   <Image source={story1} style={{width:25, height:25}}/>
+      </Text>  
     </View>
   )
 }
