@@ -1,89 +1,143 @@
 import React, { Component } from "react";
-import { View, Text, Image, TextInput, StyleSheet } from "react-native";
-import story1   from './foto/story1.jpg';
-import story2  from './foto/story2.jpg';
-import story3  from './foto/story3.jpg';
-import plus  from './foto/plus.png';
-import love  from './foto/love.jpg';
-import chat  from './foto/msg.png';
-import suga  from './foto/suga.jpg';
+import { View, Text, Image, TextInput, StyleSheet, Button } from "react-native";
+import tambah  from './foto/plus.png';
+import list  from './foto/chat.jpg';
+import account  from './foto/sg1.jpg';
+import account2  from './foto/sg2.jpg';
+import account3  from './foto/sg3.jpg';
+import sk1  from './foto/sk1.jpg';
+import bts  from './foto/bts.jpg';
+import bts2  from './foto/bts2.jpg';
+import safari  from './foto/safari.jpg';
+import pantai  from './foto/pantai.jpg';
+
+import tags  from './foto/tag.png';
+import vid  from './foto/vid.png';
+import feeds  from './foto/feed.webp';
 import home  from './foto/home.png';
 import search  from './foto/search.png';
 import vidio  from './foto/vidio.png';
-import toko  from './foto/toko.png';
-import save  from './foto/save.png';
-import komen  from './foto/komen.png';
-import send  from './foto/send.png';
+import toko  from './foto/shop.png';
+
 import { style } from "./style";
 
 const App = () => {
   // return hanya utk menampung 1 kembalian makanya diberi <view>
   return (
-    // <View style={style.container}>
+    // <Text>Selamat datang</Text>
     <View style={style.container}>
-      <Teks/>
-      <Story />
-      <TeksStory />
-      <IsiBeranda />
-      <Footer />
+      <View style={{flex:1, flexDirection:'row', backgroundColor:'white'}}>
+        <View style={{flex:9, backgroundColor:'white', justifyContent:"center"}}>
+          <Text style={{color:'black', fontSize:20, marginLeft:5}}>siskadea</Text>
+        </View>
+        <TampilanGambar simbol={tambah} />
+        <TampilanGambar simbol={list} />
+      </View>
+
+      <View style={{flex:2,  flexDirection:'row', backgroundColor:'red'}}>
+        <View style={style.viewGambar}>
+          <Image source={sk1} style={style.gambarProfile}></Image>
+        </View>
+        <CardProfile angka="100" keterangan="Postingan"/>
+        <CardProfile angka="1000" keterangan="Pengikut"/>
+        <CardProfile angka="1001" keterangan="Mengikuti"/>
+      </View>
+
+      <View style={{flex:2,backgroundColor:'white'}}>
+        <Text style={{fontSize:20, color:"black", marginLeft:5}}>Siska Dea</Text>
+        <Text style={{marginLeft:5, color:"black"}}>For :</Text>
+        <Text style={style.textBio}>- @bts.bighitofficial</Text>
+        <Text style={style.textBio}>- @bts.suga</Text>
+        <Text style={style.textBio}>- @fanbase.minyoongi</Text>
+      </View>
+
+      <View style={{flex:1,backgroundColor:'white', flexDirection:"row",
+        justifyContent:"center"}}>
+        <View style={{flex:7, margin:5}}>
+          <Button title="Edit Profile" style={{borderRadius:100}}></Button>
+        </View>
+        <View style={{flex:1, backgroundColor:"white", margin:5}}>
+          <Button title="v" ></Button>
+        </View>
+      </View>
+      <View style={{flex:2,backgroundColor:'red', flexDirection:"row"}}>
+        <Sorotan gambar={bts} keteranganSorotan="De amigos" />
+        <Sorotan gambar={safari} keteranganSorotan="Safari Trip" />
+        <Sorotan gambar={pantai} keteranganSorotan="La Playa" />
+        <Sorotan gambar={bts2} keteranganSorotan="PURPLE" />
+        
+      </View>
+
+      <View style={{flex:1,backgroundColor:'white', flexDirection:"row"}}>
+        <Tags gambar={feeds} />
+        <Tags gambar={vid} />
+        <Tags gambar={tags} />
+      </View>
+
+      <View style={{flex:2,backgroundColor:'white', flexDirection:"row"}}>
+        <Konten gambar={account} />
+        <Konten gambar={account2} />
+        <Konten gambar={account3} />
+      </View>
+
+      <View style={{flex:1,backgroundColor:'white', flexDirection:"row"}}>
+        <Tags gambar={home} />
+        <Tags gambar={search} />
+        <Tags gambar={vidio} />
+        <Tags gambar={toko} />
+        <Tags2 gambar={sk1} style={{borderRadius:50}}/>
+      </View>
     </View>
-    
   );
 }
 
-const Teks = () => {
+const TampilanGambar = (props) => {
   return(
-    <Text style={style.tulisanku}>Instagram                         <Image source={plus} style={{width:35, height:35, borderRadius:150/2}}/>   <Image source={love} style={{width:30, height:30}}/>   <Image source={chat} style={{width:30, height:30}}/> 
-    </Text>
-  )
-}
-
-const Story = () => {
-  return(
-    <View>
-      <Text style={style.tulisanku2}>
-        <Image source={story1} style={style.g80}/>  
-        <Image source={story2} style={style.g80}/>
-        <Image source={story3} style={style.g80}/>       <Image source={story3} style={style.g80}/>
-      </Text>
-     
+    <View style={style.viewGambar}>
+      <Image source={props.simbol} style={style.gambar}></Image>
     </View>
   )
 }
 
-const TeksStory = () => {
+const CardProfile = (props) => {
   return(
-    <Text style={style.tulisanku2}>   Cerita Anda     asriputridga         siskadea_             bydeclaosa
-    </Text>
-  )
-}
-
-const IsiBeranda = () => {
-  return(
-    <View>
-      <Text style={style.tulisanku2}>
-        <Image source={story3} style={{width:30, height:30}}/>  siskadea_ 
-      </Text>
-            <Image source={suga} style={{width:400, height:340}}/>  
-      <Text style={{marginLeft:8}}>
-            <Image source={love} style={{width:20, height:20}}/>   <Image source={komen} style={{width:20, height:20}}/>   <Image source={send} style={{width:25, height:25}}/>                                                                        <Image source={save} style={{width:20, height:20}}/>
-      </Text>
-      <Text style={style.tulisanku2}>4.500.000 suka</Text>
-      <Text style={style.tulisanku2}>AGUST D in the stage</Text>
+    <View style={style.viewGambar}>
+      <Text style={style.textProfile}>{props.angka}</Text>
+      <Text style={style.keteranganProfile}>{props.keterangan}</Text>
     </View>
   )
 }
-const Footer = () => {
+
+const Sorotan = (props) => {
   return(
-    <View>
-      <Text style={style.tulisanku2}>
-           <Image source={home} style={{width:25, height:25}}/>               <Image source={search} style={{width:30, height:30}}/>                 <Image source={vidio} style={{width:30, height:30}}/>                    <Image source={toko} style={{width:25, height:30}}/>                   <Image source={story1} style={{width:25, height:25}}/>
-      </Text>  
+    <View style={style.viewGambar}>
+      <Image source={props.gambar} style={style.gambarProfile}></Image>
+      <Text style={{color:"black"}}>{props.keteranganSorotan}</Text>
     </View>
   )
 }
-//inline style langsung styling di tags
-//eksternal style dpt diletakkan di file terpisah seperti css
-//internal style harus import dr stylesheet
 
+const Tags = (props) => {
+  return(
+    <View style={style.viewGambar}>
+      <Image source={props.gambar} style={style.gambarTags}></Image>
+    </View>
+  )
+}
+
+const Konten = (props) => {
+  return(
+    <View style={style.viewGambar}>
+      <Image source={props.gambar} style={style.gambarKonten}></Image>
+    </View>
+  )
+}
+
+const Tags2 = (props) => {
+  return(
+    <View style={style.viewGambar}>
+      <Image source={props.gambar} style={style.gambarTags2}></Image>
+    </View>
+  )
+}
 export default App;
